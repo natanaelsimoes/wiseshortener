@@ -26,7 +26,7 @@ class URL extends Model {
 
 export const URLAttributes = {
   hash: {
-    type: sequelize.STRING(8),
+    type: sequelize.STRING(10),
     primaryKey: true,
   },
   url: {
