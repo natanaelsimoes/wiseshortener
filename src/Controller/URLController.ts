@@ -6,7 +6,7 @@ import randomstring from "randomstring";
 class URLController {
 
   static async generateHash() {
-    const hash = randomstring.generate(6 + Math.random() * 5); // gera hash de 6 a 10 chars
+    const hash = randomstring.generate(5 + Math.random() * 6); // gera hash de 6 a 10 chars
     const current = await URL.findOne({ where: { hash }}); // procura url com hash
     if(current && current.isExpired()) { // Se existe hash e está expirado
       current.destroy(); // deleta a url do banco
