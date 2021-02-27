@@ -1,5 +1,5 @@
 {
-  "name": "wise",
+  "name": "wiseshortener",
   "version": "1.0.0",
   "main": "./src/Server.ts",
   "license": "MIT",
