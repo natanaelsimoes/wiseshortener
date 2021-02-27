@@ -40,3 +40,8 @@ ou usar uma outra instância de sua preferência.
 Configure o acesso ao banco de dados em `src/DatabaseConfig.json` e realize o processo de criação e migração de dados como fizemos no Docker.
 
 O serviço rodará sem build pelo comando `yarn dev`.
+
+## Testes
+
+Uma vez que você tenha configurado o acesso ao banco de dados, você pode 
+rodar os testes pelo comando `yarn test`.
