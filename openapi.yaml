@@ -1,0 +1,62 @@
+openapi: "3.0.0"
+info:
+  description: "Documentação de API feita para a WISE."
+  version: "1.0.0"
+  title: "Wise Shortener - Natanael Simões"
+  contact:
+    email: "natanaelsimoes@gmail.com"
+
+servers:
+  - url: https://wiseshortener-natanaelsimoes.herokuapp.com/
+
+paths:
+  /encurtador:
+    post:
+      summary: "Encurta uma URL"
+      tags:
+      - URL
+      operationId: url-post
+      requestBody:
+        description: "URL"
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                  default: "https://github.com/natanaelsimoes"
+              required:
+              - senha
+      responses:
+        '200':
+          description: "URL encurtada"
+          content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    newUrl:
+                      type: string
+                      default: "https://wiseshortener-natanaelsimoes.herokuapp.com/x01949f"
+        '400':
+          description: "URL não é válida"
+  /{hash}:
+    get:
+      summary: "Redireciona a partir da URL encurtada"
+      tags:
+      - URL
+      operationId: url-get
+      parameters:
+        - in: path
+          name: hash
+          schema:
+            type: string
+          required: true
+          description: "Hash do link encurtado"
+      responses:
+        '302':
+          description: "Redirecionamento para o link original"
+        '404':
+          description: "Hash não encontrado"
