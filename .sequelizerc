@@ -1,0 +1,11 @@
+require('@babel/register')({
+  extensions: [".es6", ".es", ".jsx", ".js", ".mjs", ".ts", ".tsx"],
+});
+
+const path = require('path');
+
+module.exports = {
+  'config': path.resolve('src', 'DatabaseConfig.json'),
+  'models-path': path.resolve('src', 'Model'),
+  'migrations-path': path.resolve('src', 'Migrations')
+}
